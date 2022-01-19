@@ -23,9 +23,7 @@ public class Airline {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%-20s %s%n", "Airline Name:", getAirlineName()));
-        return sb.toString();
+        return String.format("%-20s %s%n", "Airline Name:", getAirlineName());
     }
 
     public boolean equals(Object obj) {

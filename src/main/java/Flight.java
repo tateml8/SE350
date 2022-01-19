@@ -1,4 +1,4 @@
-import java.util.Date;
+//import java.util.Date;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -8,14 +8,14 @@ public class Flight {
     private String airline;
     private String origin;
     private String destination;
-    private Date departureTime;
+    //private Date departureTime;
 
-    public Flight(String flightNumber, String airline, String origin, String destination, Date departureTime) {
+    public Flight(String flightNumber, String airline, String origin, String destination) {
         setFlightNumber(flightNumber);
         setAirline(airline);
         setOrigin(origin);
         setDestination(destination);
-        setDepartureTime(departureTime);
+        //setDepartureTime(departureTime);
     }
 
     public String getFlightNumber() {
@@ -61,25 +61,26 @@ public class Flight {
         this.destination = destination;
     }
 
-    public Date getDepartureTime() {
+    /*public Date getDepartureTime() {
         return departureTime;
     }
 
     public void setDepartureTime(Date departureTime) {
+
         this.departureTime = departureTime;
-    }
+    }*/
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Flight)) return false;
         Flight flight = (Flight) o;
-        return getFlightNumber().equals(flight.getFlightNumber()) && getAirline().equals(flight.getAirline()) && getOrigin().equals(flight.getOrigin()) && Objects.equals(getDestination(), flight.getDestination()) && Objects.equals(getDepartureTime(), flight.getDepartureTime());
+        return getFlightNumber().equals(flight.getFlightNumber()) && getAirline().equals(flight.getAirline()) && getOrigin().equals(flight.getOrigin()) && Objects.equals(getDestination(), flight.getDestination());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getFlightNumber(), getAirline(), getOrigin(), getDestination(), getDepartureTime());
+        return Objects.hash(getFlightNumber(), getAirline(), getOrigin(), getDestination());
     }
 
     @Override
@@ -89,7 +90,7 @@ public class Flight {
         sb.append(String.format("%-20s %s%n", "Airline:", getAirline()));
         sb.append(String.format("%-20s %s%n", "Origin:", getOrigin()));
         sb.append(String.format("%-20s %s%n", "Destination:", getDestination()));
-        //sb.append("departureTime", departureTime);
+       // sb.append(String.format("%-20s %s%n", "Departure Time:", getDepartureTime()));
         return sb.toString();
     }
 }

@@ -18,16 +18,14 @@ public class Airport {
             throw new NullPointerException("Null value not allowed");
         }
         //must consist of 3 alphabetic letters and capitalize letters
-        if (aName.length() > 3 || aName.length() < 3) {
+        if (aName.length() != 3) {
             throw new IllegalArgumentException("Prohibited Value: " + aName);
         }
         airportName = aName;
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%-20s %s%n", "Airport Name:", getAirportName()));
-        return sb.toString();
+        return String.format("%-20s %s%n", "Airport Name:", getAirportName());
     }
 
     public boolean equals(Object obj) {
