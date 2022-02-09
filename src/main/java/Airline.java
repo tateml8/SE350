@@ -23,7 +23,7 @@ public class Airline {
     }
 
     public String toString() {
-        return String.format("%-20s %s%n", "Airline Name:", getAirlineName());
+        return "Airline{" + "airlineName=" + getAirlineName() + '\'' + '}';
     }
 
     public boolean equals(Object obj) {
