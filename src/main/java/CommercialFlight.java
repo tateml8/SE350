@@ -3,7 +3,7 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.UUID;
 
-public class CommercialFlight {
+public class CommercialFlight implements Flight {
 
     private UUID flightNumber;
     private Airline airline;
@@ -11,7 +11,7 @@ public class CommercialFlight {
     private Airport destination;
     private Date departureTime;
 
-    public CommercialFlight(Airline airline, Airport origin, Airport destination ) {
+    public CommercialFlight(Airline airline, Airport origin, Airport destination) {
         setFlightNumber();
         setAirline(airline);
         setOrigin(origin);

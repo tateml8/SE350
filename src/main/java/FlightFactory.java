@@ -1,10 +1,14 @@
 public class FlightFactory {
+    private FlightFactory() {
+    }
 
-    public static TravelManager getCreateFlight (Object type) {
-        TravelManager flight = null;
-        if(type.equals(flight)) {
-            return new TravelManager();
-        }
-        return flight;
+    public static Flight createFlight(String type, Airline airline, Airport origin, Airport destination) {
+        if (type.equals("commercialFlight")) {
+            try {
+                return new CommercialFlight(airline, origin, destination);
+            } catch (NullPointerException e) {
+                return null;
+            }
+        } else return null;
     }
 }

@@ -1,6 +1,4 @@
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
+import java.util.Optional;
 public class TravelManager {
 
     public static void main(String[] args) {
@@ -13,8 +11,10 @@ public class TravelManager {
         Airline airline = new Airline("United");
 
 //      //Instantiating one flight
-        CommercialFlight flight = new CommercialFlight(airline, origin, destination);
+        //CommercialFlight flight = new CommercialFlight(airline, origin, destination);
+        String flightNumber = FlightManager.getInstance().createFlight("commercialFlight",airline, origin,destination);
+        Optional<Flight> flight = FlightManager.getInstance().getFlightByFlightNumber(flightNumber);
 
-        System.out.println(flight);
+        System.out.println(flight.get());
     }
 }
