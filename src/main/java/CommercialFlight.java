@@ -69,6 +69,20 @@ public class CommercialFlight implements Flight {
         this.departureTime = new Date(2022, 03, 02, 05, 28);
     }
 
+    @Override
+    public int getPassengerCapacity() {
+        return 0;
+    }
+
+    @Override
+    public String getAirlineName() {
+        return null;
+    }
+
+    @Override
+    public String getAirportName() {
+        return null;
+    }
 
     @Override
     public String toString() {

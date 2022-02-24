@@ -5,6 +5,7 @@ import java.util.*;
 public final class FlightManager {
     private static FlightManager myInstance;
     private static List<Flight> flights;
+    private int passengerCapacity;
 
     //private constructor
     private FlightManager() {
@@ -21,7 +22,7 @@ public final class FlightManager {
 
     //createFlight function, adds resulting flight to 'flights' list
     public String createFlight(String type, Airline airline, Airport origin, Airport destination) {
-        Flight flight = FlightFactory.createFlight(type, airline, origin, destination);
+        Flight flight = FlightFactory.createFlight(type, airline, origin, destination, passengerCapacity);
         flights.add(flight);
 
         return flight.getFlightNumber();

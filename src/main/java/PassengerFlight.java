@@ -1,13 +1,13 @@
 import java.util.*;
-
-public abstract class PassengerFlight implements Flight {
+public class PassengerFlight implements Flight {
 
     //member variable
     private int passengerCapacity;
 
     //constructor
     public PassengerFlight(int passengerCapacity) {
-        this.passengerCapacity = passengerCapacity;
+        setPassengerCapacity(passengerCapacity);
+        //this.passengerCapacity = passengerCapacity;
     }
 
     //getter
@@ -21,6 +21,20 @@ public abstract class PassengerFlight implements Flight {
             throw new IllegalArgumentException("Value not allowed");
         }
         this.passengerCapacity = passengerCapacity;
+    }
+
+    @Override
+    public String getAirlineName() {
+        return null;
+    }
+
+    @Override
+    public String getAirportName() {
+        return null;
+    }
+    @Override
+    public String getFlightNumber() {
+        return null;
     }
 
 }
