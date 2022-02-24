@@ -33,4 +33,9 @@ public final class FlightManager {
                 .filter(flt -> flt.getFlightNumber().equals(flightNumber))
                 .findFirst();
     }
+    public Optional<Flight> getPassengerCapacity(int passengerCapacity) {
+        return flights.stream()
+                .filter(flt -> flt.getPassengerCapacity() == (passengerCapacity))
+                .findFirst();
+    }
 }

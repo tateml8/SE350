@@ -18,7 +18,9 @@ public class TravelManager {
 //      //Instantiating one flight
         //CommercialFlight flight = new CommercialFlight(airline, origin, destination);
         String flightNumber = FlightManager.getInstance().createFlight("commercialFlight",aName, airportName1,airportName2);
-        //FlightManager.getInstance().createFlight("passengerFlight", passengerCapacity);
+
+        //having trouble adding to main method, attempt below
+        //Integer passengerCapacity = FlightManager.getInstance().createFlight("passengerFlight", passengerCapacity);
 
         Optional<Flight> flight = FlightManager.getInstance().getFlightByFlightNumber(flightNumber);
 
