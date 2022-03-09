@@ -2,13 +2,13 @@ import java.util.*;
 
 //created the Flight interface
 
-public final class FlightManager {
+public final class FlightManager implements Flight {
     private static FlightManager myInstance;
     private static List<Flight> flights;
     private int passengerCapacity;
 
     //private constructor
-    private FlightManager() {
+    FlightManager() {
         flights = new ArrayList<Flight>();
     }
 
@@ -37,5 +37,30 @@ public final class FlightManager {
         return flights.stream()
                 .filter(flt -> flt.getPassengerCapacity() == (passengerCapacity))
                 .findFirst();
+    }
+
+    @Override
+    public String getFlightNumber() {
+        return null;
+    }
+
+    @Override
+    public int getPassengerCapacity() {
+        return 0;
+    }
+
+    @Override
+    public String getAirlineName() {
+        return null;
+    }
+
+    @Override
+    public String getAirportName() {
+        return null;
+    }
+
+    @Override
+    public boolean isAtEnd(FlightManager flights) {
+        return flights.isAtEnd(flights);
     }
 }

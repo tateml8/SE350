@@ -1,7 +1,7 @@
 import java.util.Optional;
 public class TravelManager {
 
-    public static void main(String[] args) {
+    public static void main(String[] args, FlightManager flights) {
        // Instantiating two airports
         //Airport origin = new Airport("DCA");
         //Airport destination = new Airport("ORD");
@@ -24,6 +24,12 @@ public class TravelManager {
 
         Optional<Flight> flight = FlightManager.getInstance().getFlightByFlightNumber(flightNumber);
 
+        //Flight manager
+        ProxyFlightManager flightmanager = new ProxyFlightManager();
+
+        flightmanager.isAtEnd(flights);
+
+        System.out.println("Flight Number:" + flightNumber + " is being retrieved");
         System.out.println(flight.get());
     }
 }

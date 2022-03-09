@@ -4,4 +4,6 @@ public interface Flight {
     public String getAirlineName();
     public String getAirportName();
 
+    boolean isAtEnd(FlightManager flights);
+
 }
